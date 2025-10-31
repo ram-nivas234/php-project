@@ -40,7 +40,7 @@
     <div class="container clearfix">
       <div class="contact-info float-left">
         <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">transpot@gmail.com</a>
-        <i class="fa fa-phone"></i> +91 8003649945
+        <i class="fa fa-phone"></i> +91 7068878252
       </div>
     </div>
   </section>
@@ -274,3 +274,4 @@
 
 </body>
 </html>
+
