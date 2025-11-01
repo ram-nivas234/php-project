@@ -1,5 +1,5 @@
 <?php 
-$con=mysqli_connect('localhost','root','','transport');
+$con=mysqli_connect('my-sql-db.cdsyiecqgins.ap-south-1.rds.amazonaws.com','ram','Ramnivas','transport');
 session_start();
 if (isset($_POST['alogin'])) {
 	$name=$_POST['uname'];
@@ -462,4 +462,5 @@ if (isset($_POST['tbkd'])) {
     }
   }
 }
+
 ?> 
