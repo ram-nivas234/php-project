@@ -1,19 +1,18 @@
 server {
     listen 80;
-    server_name _;  # or use your domain/IP
+    server_name localhost;
     root /var/www/html;
     index index.php index.html index.htm;
 
-    access_log /var/log/nginx/php_site_access.log;
-    error_log /var/log/nginx/php_site_error.log;
-
     location / {
-        try_files $uri $uri/ /index.php?$query_string;
+        try_files $uri $uri/ =404;
     }
 
     location ~ \.php$ {
-        include fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php8.4-fpm.sock;
+        include fastcgi_params;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 
     location ~ /\.ht {
