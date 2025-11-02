@@ -19,4 +19,4 @@ RUN mkdir -p /run/php && chown -R www-data:www-data /var/www/html
 EXPOSE 80
 
 # Start PHP-FPM service, then Nginx in foreground
-CMD service php8.2-fpm start && nginx -g "daemon off;"
+CMD service php8.4-fpm start && nginx -g "daemon off;"
