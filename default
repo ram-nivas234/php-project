@@ -1,0 +1,22 @@
+server {
+    listen 80;
+    server_name _;  # or use your domain/IP
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    access_log /var/log/nginx/php_site_access.log;
+    error_log /var/log/nginx/php_site_error.log;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.4-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
