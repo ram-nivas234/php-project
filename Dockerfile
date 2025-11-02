@@ -16,7 +16,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN a2enmod rewrite
 
 # Optionally, you can copy a custom Apache config if you want to override defaults
-# COPY ./apache/default.conf /etc/apache2/sites-available/000-default.conf
+# COPY default /etc/apache2/sites-available/000-default.conf
 
 # Expose port 80
 EXPOSE 80
